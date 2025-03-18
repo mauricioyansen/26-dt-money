@@ -15,6 +15,30 @@
       "category": "Alimentação",
       "price": 100,
       "createdAt": "2025-03-18T12:55:50.499Z"
+    },
+    {
+      "description": "Test",
+      "price": 123,
+      "category": "Test Categoty",
+      "type": "income",
+      "createdAt": "2025-03-18T21:22:07.340Z",
+      "id": "yxdmvMD"
+    },
+    {
+      "description": "TV",
+      "price": 1212,
+      "category": "Eletron",
+      "type": "outcome",
+      "createdAt": "2025-03-18T21:40:08.620Z",
+      "id": "cVy9bb6"
+    },
+    {
+      "description": "Test",
+      "price": 1232,
+      "category": "Test Categoty",
+      "type": "outcome",
+      "createdAt": "2025-03-18T22:02:06.988Z",
+      "id": "nmhBygH"
     }
   ]
 }
