@@ -55,7 +55,12 @@ export const Content = styled(Dialog.Content)`
       cursor: pointer;
       transition: background-color 0.2s;
 
-      &:hover {
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover {
         background: ${(p) => p.theme["green-700"]};
       }
     }
@@ -84,7 +89,9 @@ interface TransactionTypeButtonProps {
   variant: "income" | "outcome";
 }
 
-export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(
+  RadioGroup.Item
+)<TransactionTypeButtonProps>`
   background: ${(p) => p.theme["gray-700"]};
   padding: 1rem;
   display: flex;
