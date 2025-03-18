@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as Dialog from "@radix-ui/react-dialog";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
@@ -33,12 +34,16 @@ export const Content = styled(Dialog.Content)`
       color: ${(p) => p.theme["gray-300"]};
       padding: 1rem;
 
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
       &::placeholder {
         color: ${(p) => p.theme["gray-500"]};
       }
     }
 
-    button {
+    button[type="submit"] {
       height: 58px;
       border: 0;
       background: ${(p) => p.theme["green-500"]};
@@ -66,4 +71,55 @@ export const CloseButton = styled(Dialog.Close)`
   line-height: 0;
   cursor: pointer;
   color: ${(p) => p.theme["gray-500"]};
+`;
+
+export const TransactionType = styled(RadioGroup.Root)`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: auto.5rem;
+`;
+
+interface TransactionTypeButtonProps {
+  variant: "income" | "outcome";
+}
+
+export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+  background: ${(p) => p.theme["gray-700"]};
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 0;
+  color: ${(p) => p.theme["gray-300"]};
+  transition: background-color 0.2s;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px
+      ${(p) =>
+        p.variant === "income" ? p.theme["green-500"] : p.theme["red-500"]};
+  }
+
+  svg {
+    color: ${(p) =>
+      p.variant === "income" ? p.theme["green-300"] : p.theme["red-300"]};
+  }
+
+  &[data-state="unchecked"]:hover {
+    background: ${(p) => p.theme["gray-600"]};
+  }
+
+  &[data-state="checked"] {
+    color: ${(p) => p.theme.white};
+    background: ${(p) =>
+      p.variant === "income" ? p.theme["green-500"] : p.theme["red-500"]};
+
+    svg {
+      color: ${(p) => p.theme.white};
+    }
+  }
 `;
