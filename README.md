@@ -2,6 +2,8 @@
 
 Dt Money é um aplicativo web desenvolvido em React que permite o cadastro de transações financeiras de um usuário. Ele permite registrar tanto entradas quanto saídas de dinheiro, exibindo automaticamente o saldo atualizado no painel principal. Além disso, o usuário pode buscar e filtrar transações no histórico.
 
+![Dt Money Preview](./assets/dt-money-preview.png)
+
 ## Tecnologias Utilizadas
 - React 19
 - Vite
